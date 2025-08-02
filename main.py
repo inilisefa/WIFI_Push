@@ -1,9 +1,7 @@
 import os
-
 import requests
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage
-
 
 APP_ID = os.getenv('APP_ID')
 APP_SECRET = os.getenv('APP_SECRET')
@@ -88,4 +86,3 @@ if __name__ == '__main__':
         data=get_portable_wifi_info(),
         url='http://wifi.ruijiadashop.cn/index.html#/'
     )
-
