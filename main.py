@@ -3,15 +3,12 @@ import os
 import requests
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage
-APP_ID = 'wxb6641a5b9842360c'
-APP_SECRET = '076088b325d3243a3365cf440bdc5196'
-TEMPALTE_ID = 'y0Ln9bKBclhw6L8QqX_ygAs-3Jr78OfIHSu_kgaZvIU'
-OPEN_ID = 'o7YypvrA4d8mYGlLsvTEoHNaESMQ'
 
-# APP_ID = os.getenv('APP_ID')
-# APP_SECRET = os.getenv('APP_SECRET')
-# TEMPALTE_ID = os.getenv('TEMPALTE_ID')
-# OPEN_ID = os.getenv('OPEN_ID')
+
+APP_ID = os.getenv('APP_ID')
+APP_SECRET = os.getenv('APP_SECRET')
+TEMPALTE_ID = os.getenv('TEMPALTE_ID')
+OPEN_ID = os.getenv('OPEN_ID')
 
 
 def get_access_token() -> str:
@@ -91,3 +88,4 @@ if __name__ == '__main__':
         data=get_portable_wifi_info(),
         url='http://wifi.ruijiadashop.cn/index.html#/'
     )
+
