@@ -1,7 +1,7 @@
 name: morning
 on:
   schedule:
-    - cron: '04 2 * * *'     # 01:44 触发
+    - cron: '* /5 * * * *'     # 01:44 触发
   workflow_dispatch:
 
 jobs:
