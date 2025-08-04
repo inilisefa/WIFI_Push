@@ -1,12 +1,17 @@
 import os
+import time
 import requests
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage
 
-APP_ID = os.getenv('APP_ID')
-APP_SECRET = os.getenv('APP_SECRET')
-TEMPALTE_ID = os.getenv('TEMPALTE_ID')
-OPEN_ID = os.getenv('OPEN_ID')
+# APP_ID = os.getenv('APP_ID')
+# APP_SECRET = os.getenv('APP_SECRET')
+# TEMPALTE_ID = os.getenv('TEMPALTE_ID')
+# OPEN_ID = os.getenv('OPEN_ID')
+APP_ID = 'wxb6641a5b9842360c'
+APP_SECRET = '076088b325d3243a3365cf440bdc5196'
+TEMPALTE_ID = '8Rnfw5hk-gl-s6qVhvfd9YTg-a6KSsbwojLVY6Ccm74'
+OPEN_ID = 'o7YypvrA4d8mYGlLsvTEoHNaESMQ'
 
 
 def get_access_token() -> str:
@@ -81,8 +86,12 @@ def get_portable_wifi_info() -> dict:
 
 
 if __name__ == '__main__':
-    send_template_msg(
-        OPEN_ID=OPEN_ID,
-        data=get_portable_wifi_info(),
-        url='http://wifi.ruijiadashop.cn/index.html#/'
-    )
+    while True:
+        send_template_msg(
+            OPEN_ID=OPEN_ID,
+            data=get_portable_wifi_info(),
+            url='http://wifi.ruijiadashop.cn/index.html#/'
+        )
+        time.sleep(60)
+    res = get_portable_wifi_info()
+    print(res)
