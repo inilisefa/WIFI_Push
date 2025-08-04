@@ -48,7 +48,7 @@ def send_dingtalk_msg(data: dict):
     runningTime = data.get('runningTime')
     hotspotName = data.get('hotspotName')
     today_usage = data.get('today_usage')
-    access_token = os.environ.get('DINGTALK_ACCESS_TOKEN')
+    access_token ='1c127dbb810bbeb46dbd6073636191c77cf2655370a644530be03798b0714706'
     url = f'https://oapi.dingtalk.com/robot/send?access_token={access_token}'
     playload = {
         "msgtype": "markdown",
