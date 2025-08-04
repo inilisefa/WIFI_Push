@@ -1,7 +1,6 @@
 import json
 import os
 import time
-import schedule
 import requests
 
 
@@ -16,10 +15,10 @@ def get_portable_wifi_info() -> dict:
     data = data["data"]
 
     # 流量相关
-    totalAmount = f'{float(data["totalAmount"]) / 1024:.2f}'
-    remainAmount = f"{float(data["remainAmount"]) / 1024:.2f}"
+    totalAmount = f"{float(data['totalAmount']) / 1024:.2f}"
+    remainAmount = f"{float(data['remainAmount']) / 1024:.2f}"
     equipment = data["equipment"]
-    expiretime = data["expiretime"]  # 2025-08-03
+    expiretime = equipment["expiretime"]  # 2025-08-03
 
     # 设备相关
     devicePower = equipment["devicePower"]
@@ -91,8 +90,4 @@ def job():
 
 
 if __name__ == '__main__':
-    schedule.every().hour.do(job)
     job()
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
