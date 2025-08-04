@@ -18,7 +18,7 @@ logging.basicConfig(
 # 常量定义
 WIFI_API_URL = 'http://wifi.ruijiadashop.cn/api/Card/loginCard'
 DINGTALK_WEBHOOK = 'https://oapi.dingtalk.com/robot/send'
-DINGTALK_ACCESS_TOKEN = '1c127dbb810bbeb46dbd6073636191c77cf2655370a644530be03798b0714706'
+DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
 DEVICE_NO = '8182350068'
 AT_USER_IDS = ["manager1573"]
 
