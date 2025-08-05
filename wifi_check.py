@@ -48,7 +48,7 @@ def get_portable_wifi_info() -> Dict[str, Any]:
             "dev_no": equipment.get("dev_no", ""),
             "totalAmount": f"{total_amount:.2f}",
             "remainAmount": f"{remain_amount:.2f}",
-            "expiretime": equipment.get("expiretime", ""),
+            "expiretime": data.get("expiretime", ""),
             "devicePower": equipment.get("devicePower", ""),
             "runningTime": equipment.get("runningTime", ""),
             "hotspotName": equipment.get("hotspotName", ""),
@@ -89,7 +89,7 @@ def send_dingtalk_msg(data: Dict[str, Any]) -> bool:
             },
             "at": {
                 "atUserIds": AT_USER_IDS,
-                "isAtAll": False  # 根据需求调整是否@所有人
+                "isAtAll": True  # 根据需求调整是否@所有人
             }
         }
         response = requests.post(url, json=payload, timeout=10)
