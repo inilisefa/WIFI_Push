@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 * * * *'  # 每小时执行一次 (UTC时间)
   workflow_dispatch:     # 允许手动触发
+  push:
+    branches:
+      - main
 
 jobs:
   combined-task:
