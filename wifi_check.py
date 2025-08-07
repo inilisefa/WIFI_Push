@@ -16,8 +16,9 @@ logging.basicConfig(
 )
 
 # 常量定义
-WIFI_API_URL = 'http://wifi.ruijiadashop.cn/api/Card/loginCard'
+WIFI_API_URL = 'http://dongle.ruijiadashop.cn/api/Card/loginCard'
 DINGTALK_WEBHOOK = 'https://oapi.dingtalk.com/robot/send'
+# DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
 DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
 DEVICE_NO = '8182350068'
 AT_USER_IDS = ["manager1573"]
@@ -120,7 +121,7 @@ def job():
 
 if __name__ == '__main__':
     # 单次执行
-    job()
+    get_portable_wifi_info()
 
     # 如果要设置为定时任务，可以使用以下代码
     # import schedule
