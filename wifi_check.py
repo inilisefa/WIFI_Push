@@ -121,15 +121,17 @@ def job():
 
 
 if __name__ == '__main__':
+
+    job()
     # 单次执行
     # get_portable_wifi_info()
 
     # 如果要设置为定时任务，可以使用以下代码
-    import schedule
-
-    # 设置每30分钟执行一次
-    schedule.every(1).hours.do(job)
-
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # import schedule
+    #
+    # # 设置每30分钟执行一次
+    # schedule.every(1).hours.do(job)
+    #
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
