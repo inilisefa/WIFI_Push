@@ -38,9 +38,10 @@ class WeChatMonitor:
             remain = float(data.get("remainAmount", 0)) / 1024
 
             return {
+                "dev_no": equipment.get("dev_no", "N/A"),
                 "totalAmount": f"{total:.2f}",
                 "remainAmount": f"{remain:.2f}",
-                "expiretime": equipment.get("reportTime", "N/A"),
+                "expiretime": data.get("reportTime", "N/A"),
                 "devicePower": equipment.get("devicePower", "N/A"),
                 "runningTime": equipment.get("runningTime", "N/A"),
                 "hotspotName": equipment.get("hotspotName", "N/A"),
@@ -55,6 +56,7 @@ class WeChatMonitor:
         """发送微信模板消息"""
         try:
             template_data = {
+                "dev_no": {"value": data['dev_no'], "color": "#FF0000"},
                 "totalAmount": {"value": data['totalAmount'], "color": "#FF0000"},
                 "remainAmount": {"value": data['remainAmount'], "color": "#6FB98F"},
                 "expiretime": {"value": data['expiretime'], "color": "#6FB98F"},
