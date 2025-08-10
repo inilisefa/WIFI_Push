@@ -81,7 +81,7 @@ def send_dingtalk_msg(data: Dict[str, Any]) -> bool:
                     f"#### 设备号: {data.get('dev_no', '')}\n"
                     f"#### 总流量: {data.get('totalAmount', '')} GB\n"
                     f"#### 剩余流量: {data.get('remainAmount', '')} GB\n"
-                    f"#### 今日已用: {data.get('today_usage', '')} GB\n"
+                    f"#### 已用流量: {data.get('today_usage', '')} GB\n"
                     f"#### 设备电量: {data.get('devicePower', '')}%\n"
                     f"#### 设备已运行: {data.get('runningTime', '')}\n"
                     f"#### 热点名称: {data.get('hotspotName', '')}\n"
