@@ -10,7 +10,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('wifi_monitor.log'),
+        # logging.FileHandler('wifi_monitor.log'),
         logging.StreamHandler()
     ]
 )
@@ -19,7 +19,8 @@ logging.basicConfig(
 WIFI_API_URL = 'http://dongle.ruijiadashop.cn/api/Card/loginCard'
 DINGTALK_WEBHOOK = 'https://oapi.dingtalk.com/robot/send'
 # DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
-DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
+DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN',
+                                  '1c127dbb810bbeb46dbd6073636191c77cf2655370a644530be03798b0714706')
 DEVICE_NO = '8182350068'
 AT_USER_IDS = ["manager1573"]
 
@@ -121,14 +122,14 @@ def job():
 
 if __name__ == '__main__':
     # 单次执行
-    get_portable_wifi_info()
+    # get_portable_wifi_info()
 
     # 如果要设置为定时任务，可以使用以下代码
-    # import schedule
-    #
-    # # 设置每30分钟执行一次
-    # schedule.every(30).minutes.do(job)
-    #
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
+    import schedule
+
+    # 设置每30分钟执行一次
+    schedule.every(1).seconds.do(job)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
