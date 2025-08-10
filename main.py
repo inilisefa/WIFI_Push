@@ -11,6 +11,9 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
+OPEN_ID = os.getenv('OPEN_ID')
+# TEMPLATE_ID = os.getenv('TEMPLATE_ID','y0Ln9bKBclhw6L8QqX_ygAs-3Jr78OfIHSu_kgaZvIU')
+TEMPLATE_ID = 'y0Ln9bKBclhw6L8QqX_ygAs-3Jr78OfIHSu_kgaZvIU'
 
 
 class WeChatMonitor:
@@ -62,8 +65,8 @@ class WeChatMonitor:
             }
 
             self.message_api.send_template(
-                os.getenv('OPEN_ID'),
-                os.getenv('TEMPLATE_ID'),
+                OPEN_ID,
+                TEMPLATE_ID,
                 template_data,
                 url='https://wifi.ruijiadashop.cn/index.html'
             )
