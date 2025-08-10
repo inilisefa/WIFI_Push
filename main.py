@@ -41,7 +41,7 @@ class WeChatMonitor:
                 "dev_no": equipment.get("dev_no", "N/A"),
                 "totalAmount": f"{total:.2f}",
                 "remainAmount": f"{remain:.2f}",
-                "expiretime": data.get("reportTime", "N/A"),
+                "expiretime": data.get("'expiretime'", "N/A"),
                 "devicePower": equipment.get("devicePower", "N/A"),
                 "runningTime": equipment.get("runningTime", "N/A"),
                 "hotspotName": equipment.get("hotspotName", "N/A"),
