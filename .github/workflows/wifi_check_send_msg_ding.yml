@@ -1,4 +1,4 @@
-name: WiFi Usage Check and Run Main Script
+name: Send the WIFI usage status to DingTalk
 
 on:
   schedule:
