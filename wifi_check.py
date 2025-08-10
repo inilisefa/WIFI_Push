@@ -128,7 +128,7 @@ if __name__ == '__main__':
     import schedule
 
     # 设置每30分钟执行一次
-    schedule.every(1).seconds.do(job)
+    schedule.every(1).hours.do(job)
 
     while True:
         schedule.run_pending()
