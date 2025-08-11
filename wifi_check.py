@@ -16,7 +16,7 @@ logging.basicConfig(
 )
 
 # 常量定义
-WIFI_API_URL = 'http://dongle.ruijiadashop.cn/api/Card/loginCard'
+WIFI_API_URL = 'http://wifi2.ruijiadashop.cn/api/Card/loginCard'
 DINGTALK_WEBHOOK = 'https://oapi.dingtalk.com/robot/send'
 # DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
 DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN',
