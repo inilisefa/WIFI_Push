@@ -27,7 +27,7 @@ class WeChatMonitor:
     def get_wifi_info(self) -> dict:
         """获取WiFi设备信息"""
         try:
-            url = 'http://wifi2.ruijiadashop.cn/api/Card/loginCard'
+            url = 'http://wifi3.ruijiadashop.cn/api/Card/loginCard'
             params = {'dev_no': '8182350068', 'type': 2}
             response = requests.post(url, json=params, timeout=10)
             response.raise_for_status()
