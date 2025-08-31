@@ -5,6 +5,8 @@ import requests
 import logging
 from typing import Dict, Any
 
+from utils import check_wifi_domains_availability
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
@@ -16,7 +18,7 @@ logging.basicConfig(
 )
 
 # 常量定义
-WIFI_API_URL = 'http://wifi3.ruijiadashop.cn/api/Card/loginCard'
+WIFI_API_URL = check_wifi_domains_availability()
 DINGTALK_WEBHOOK = 'https://oapi.dingtalk.com/robot/send'
 # DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN')
 DINGTALK_ACCESS_TOKEN = os.getenv('DINGTALK_ACCESS_TOKEN',

@@ -36,3 +36,13 @@ jobs:
           TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
         run: |
           python main.py
+
+      # 5. 运行 wifi_check.py 脚本
+      - name: Run wifi_check script
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_SECRET: ${{ secrets.APP_SECRET }}
+          OPEN_ID: ${{ secrets.OPEN_ID }}
+          TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
+        run: |          
+          python wifi_check.py

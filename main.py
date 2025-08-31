@@ -6,6 +6,8 @@ from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage
 from wechatpy.exceptions import WeChatClientException
 
+from utils import check_wifi_domains_availability
+
 # 配置日志
 logging.basicConfig(
     level=logging.INFO,
@@ -27,7 +29,7 @@ class WeChatMonitor:
     def get_wifi_info(self) -> dict:
         """获取WiFi设备信息"""
         try:
-            url = 'http://wifi3.ruijiadashop.cn/api/Card/loginCard'
+            url = check_wifi_domains_availability()
             params = {'dev_no': '8182350068', 'type': 2}
             response = requests.post(url, json=params, timeout=10)
             response.raise_for_status()
