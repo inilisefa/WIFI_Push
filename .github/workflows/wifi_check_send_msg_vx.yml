@@ -4,6 +4,9 @@ on:
   schedule:
     # 每小时触发一次
     - cron: '0 * * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -44,5 +47,5 @@ jobs:
           APP_SECRET: ${{ secrets.APP_SECRET }}
           OPEN_ID: ${{ secrets.OPEN_ID }}
           TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
-        run: |          
+        run: |
           python wifi_check.py
