@@ -9,7 +9,7 @@ def check_wifi_domains_availability():
     for i in range(1, 11):
         try:
 
-            url = f'http://wifi{i}.ruijiadashop.cn/api/Card/loginCard'
+            url = f'http://user.ruijiadashop.cn/api/Card/loginCard'
             params = {'dev_no': '8182350068', 'type': 2}
             response = requests.post(url, json=params, timeout=10)
             response.raise_for_status()
