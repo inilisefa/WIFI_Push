@@ -26,6 +26,9 @@ class WeChatMonitor:
         )
         self.message_api = WeChatMessage(self.client)
 
+    def get_random_color(self):
+        return "#%06x" % random.randint(0, 0xFFFFFF)
+
     def get_wifi_info(self) -> dict:
         """获取WiFi设备信息"""
         try:
@@ -61,7 +64,7 @@ class WeChatMonitor:
                 "dev_no": {"value": data['dev_no'], "color": "#FF0000"},
                 "totalAmount": {"value": data['totalAmount'], "color": "#FF0000"},
                 "remainAmount": {"value": data['remainAmount'], "color": "#6FB98F"},
-                "expiretime": {"value": data['expiretime'], "color": "#6FB98F"},
+                "expiretime": {"value": data['expiretime'], "color": self.get_random_color()},
                 "devicePower": {"value": data['devicePower'], "color": "#6FB98F"},
                 "runningTime": {"value": data['runningTime'], "color": "#6FB98F"},
                 "hotspotName": {"value": data['hotspotName'], "color": "#6FB98F"},
