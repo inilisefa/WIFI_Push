@@ -5,7 +5,7 @@ import logging
 from wechatpy import WeChatClient
 from wechatpy.client.api import WeChatMessage
 from wechatpy.exceptions import WeChatClientException
-
+from config import base_url
 from utils import check_wifi_domains_availability
 
 # 配置日志
